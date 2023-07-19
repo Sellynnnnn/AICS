@@ -18,8 +18,7 @@
  
                   <form class="form-horizontal span6  wow fadeInDown" action="controller.php?action=add" method="POST">
 
-                      <?php echo $res->AUTO; ?>
-                         
+                          
                      <div class="form-group">
                       <div class="col-md-8">
                         <label class="col-md-4 control-label" for=
@@ -42,7 +41,7 @@
                           <input name="deptid" type="hidden" value="">
                           <textarea  class="form-control input-sm" id="DEPARTMENT_DESC" name="DEPARTMENT_DESC" placeholder=
                               "Description" rows="5" cols="60"  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off"></textarea>
-                          
+                           
                         </div>
                       </div>
                     </div>
@@ -57,7 +56,6 @@
 
                         <div class="col-md-8">
                          <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                           
                          </div>
                       </div>
                     </div>
@@ -87,8 +85,9 @@
        
                 
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
+ 
 
  

@@ -15,7 +15,6 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Update Department</h2>
-            
             </div>
                
             <div class="row">
@@ -61,7 +60,6 @@
 
                             <div class="col-md-8">
                                <button class="btn btn-primary " name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
-                             
                             </div>
                           </div>
                         </div>

@@ -8,7 +8,7 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">List of Departments</h2>
-          
+            </div>
                
             <div class="row">
                 <div class="features">
@@ -29,14 +29,14 @@
 							  </thead> 
 							  <tbody>
 							  	<?php   
-							  	
+							  		
 							  		$mydb->setQuery("SELECT * 
 														FROM  `tbldepartment`");
 							  		$cur = $mydb->loadResultList();
 
 									foreach ($cur as $result) { 
 							  		echo '<tr>';
-							  
+							  		
 							  		echo '<td>' . $result->DepartmentID.'</a></td>';
 							  		echo '<td>'. $result->Department.'</td>';
 							  		echo '<td>'. $result->Description.'</td>';
@@ -53,7 +53,6 @@
 
 							 <div class="btn-group">
 							  <a href="index.php?view=add" class="btn btn-primary"> <i class="fa fa-plus-circle fw-fa"></i> New</a>
-					
 							</div>
 							 
 							</form>

@@ -40,7 +40,8 @@ switch ($action) {
 			$dept->Description		= $_POST['DEPARTMENT_DESC']; 
 			$dept->create();
 
-		
+		 $autonum = New Autonumber(); 
+			
 
 			message("New [". $_POST['DEPARTMENT_NAME'] ."] created successfully!", "success");
 			redirect("index.php");
