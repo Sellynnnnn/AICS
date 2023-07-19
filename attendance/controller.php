@@ -65,13 +65,12 @@ switch ($action) {
 		}else{	
  
 				$candidate = New Candidate(); 
-			
-				$candidate->Position		= $_POST['Position']; 
+				
+				$candidate->Position		= $_POST['Position'];
 				$candidate->PartyList		= $_POST['PartyList']; 
 				$candidate->RunningDate	 	= date_format(date_create($_POST['RunningDate']),'Y-m-d');  
 				$candidate->update($_POST['CandidateID']);
 
-						
 
 				message("Candidate has been updated!", "success");
 				redirect("index.php"); 
@@ -83,6 +82,9 @@ switch ($action) {
 } 
 
 	function doDelete(){
+		
+
+			 
 		
 		
  
@@ -99,7 +101,6 @@ switch ($action) {
 
 			message("Candidate already Deleted!","success");
 			redirect('index.php');
-		
 
 		
 	}

@@ -11,7 +11,6 @@
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Attendance</h2>
                
-            </div>
 
             <div class="row">
                 <div class="features">
@@ -36,7 +35,6 @@
 								  <tbody>
 								  	<?php  
 								  	
-
 								  		$mydb->setQuery("SELECT * FROM `tbltimetable` t, `tblstudent` s
 								  						 WHERE t.`StudentID`=s.`StudentID` ORDER BY TimeTableID desc");
 

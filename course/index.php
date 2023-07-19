@@ -5,25 +5,21 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
 }
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
- $title="Attendance"; 
+ $title="Course"; 
  $header=$view; 
 switch ($view) {
 	case 'list' :
 		$content    = 'list.php';		
 		break;
 
-	
-	case 'grades' :
-		$content    = 'viewgrade.php';		
-		break;
-	case 'addgrade' :
-		$content    = 'addgrade.php';		
+	case 'add' :
+		$content    = 'add.php';		
 		break;
 
 	case 'edit' :
 		$content    = 'edit.php';		
 		break;
-    case 'checkattendance' :
+    case 'view' :
 		$content    = 'view.php';		
 		break;
 
