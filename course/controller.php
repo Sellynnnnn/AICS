@@ -41,7 +41,6 @@ switch ($action) {
 			$course->DepartmentID			= $_POST['DEPT_ID'];
 			$course->create();
 
-						
 
 			message("New [". $_POST['COURSE_NAME'] ."] created successfully!", "success");
 			redirect("index.php");
@@ -78,7 +77,7 @@ switch ($action) {
 			 
 			message("Course already Deleted!","info");
 			redirect('index.php');
-		
+	
 		
 	}
 

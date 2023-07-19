@@ -16,7 +16,6 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Update Course</h2>
-             
             </div>
                
             <div class="row">

@@ -55,7 +55,7 @@ switch ($action) {
 			$autonumber->AUTOSTART	= $_POST['AUTOSTART'];
 			$autonumber->AUTOINC	= $_POST['AUTOINC'];
 			$autonumber->AUTOEND	= $_POST['AUTOEND'];
-		
+	
 			$autonumber->update($_POST['AUTOKEY']);
 
 			message(" Autonumber has been updated!", "success");
@@ -66,7 +66,8 @@ switch ($action) {
 
 
 	function doDelete(){
-	
+		
+
 			$id = $_GET['AUTOKEY'];
 
 			$autonumber = New Autonumber();
@@ -75,7 +76,7 @@ switch ($action) {
 			message("autonumber already Deleted!","info");
 			redirect('index.php');
 
-
+	
 		
 	}
 ?>

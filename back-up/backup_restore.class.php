@@ -59,7 +59,7 @@ class backup_restore {
 	 * @access public
 	 */
 	public function __construct($dbhost,$database,$dbUser ,$dbPass, $path="") {
-		// Raise the memory limit and max_execution time
+	
 		@ini_set( 'memory_limit', '32M' );
 		@set_time_limit( 0 );		
 		
@@ -127,19 +127,18 @@ class backup_restore {
 	 */
 	public static function conform_dir( $dir, $recursive = false ) {
 
-		// Assume empty dir is root
+		
 		if ( ! $dir )
 			$dir = '/';
 
-		// Replace single forward slash (looks like double slash because we have to escape it)
+	
 		$dir = str_replace( '\\', '/', $dir );
 		$dir = str_replace( '//', '/', $dir );
 
-		// Remove the trailing slash
 		if ( $dir !== '/' )
 			$dir = self::untrailingslashit( $dir );
 
-		// Carry on until completely normalized
+
 		if ( ! $recursive && self::conform_dir( $dir, true ) != $dir )
 			return self::conform_dir( $dir );
 
@@ -209,9 +208,7 @@ class backup_restore {
 
 		$this->Connect();
 
-//	    mysql_set_charset( DB_CHARSET, $this->db );
 
-	    // Begin new backup of MySql
 	    $tables = mysql_query( 'SHOW TABLES' );
 
 	    $sql_file  = "# WordPress : buffernow.com MySQL database backup\n";
@@ -225,7 +222,7 @@ class backup_restore {
 
 	    	$curr_table = mysql_tablename( $tables, $i );
 
-	    	// Create the SQL statements
+	    	
 	    	$sql_file .= "# --------------------------------------------------------\n";
 	    	$sql_file .= "# Table: " . $this->sql_backquote( $curr_table ) . "\n";
 	    	$sql_file .= "# --------------------------------------------------------\n";
@@ -237,7 +234,7 @@ class backup_restore {
 
 	}
 	
-	//Restore
+	
  	public function restore() {
 		
 			$this->Connect();
@@ -252,15 +249,15 @@ class backup_restore {
  			$buffer = '';
  			
 			foreach ($lines as $line) {				
- 				// Skipping comments 
+ 			
  				if (substr(ltrim($line), 0, 2) == '--' || $line[0]=='#')
  					continue; 							
 							
-				// Skip empty lines 
+		
  				if (($line = trim($line)) == ''){
  					continue;
 				}
-				// Multiline query
+				
 				else if($line[strlen($line)-1] !=";"){
 				$buffer .= $line;
 				    continue;
@@ -269,17 +266,13 @@ class backup_restore {
  					if ($buffer) {
 							
  						$line = $buffer . $line;
- 						// reset the buffer
+ 					
 						
  						$buffer = '';
  					}
- 				// clean it 
-			//	$line = trim($line,"buffernowdotcom");
- 			//	$line = substr($line, 0, -1);
-				
-				//// here we go
+ 		
 				$result = @mysql_query($line) or die(mysql_error().$line);		
- 				////
+ 			
 				
 				if (!$result ) {				
 							
@@ -320,9 +313,9 @@ class backup_restore {
 	    $sql_file .= "\n";
 	    $sql_file .= "DROP TABLE IF EXISTS " . $this->sql_backquote( $table ) . ";\n";
 
-	    /* Table Structure */
+	   
 
-	    // Comment in SQL-file
+	  
 	    $sql_file .= "\n";
 	    $sql_file .= "\n";
 	    $sql_file .= "#\n";
@@ -330,7 +323,7 @@ class backup_restore {
 	    $sql_file .= "#\n";
 	    $sql_file .= "\n";
 
-	    // Get table structure
+	  
 	    $query = 'SHOW CREATE TABLE ' . $this->sql_backquote( $table );
 	    $result = mysql_query( $query );
 
@@ -346,9 +339,7 @@ class backup_restore {
 
 	    }
 
-	    /* Table Contents */
-
-	    // Get table contents
+	   
 	    $query = 'SELECT * FROM ' . $this->sql_backquote( $table );
 	    $result = mysql_query( $query);
 
@@ -357,13 +348,14 @@ class backup_restore {
 	    	$rows_cnt   = mysql_num_rows( $result );
 	    }
 
+	
 	    $sql_file .= "\n";
 	    $sql_file .= "\n";
 	    $sql_file .= "#\n";
 	    $sql_file .= "# Data contents of table " . $table . " (" . $rows_cnt . " records)\n";
 	    $sql_file .= "#\n";
 
-	 
+	
 	    for ( $j = 0; $j < $fields_cnt; $j++ ) {
 
 	    	$field_set[$j] = $this->sql_backquote( mysql_field_name( $result, $j ) );
@@ -377,6 +369,7 @@ class backup_restore {
 
 	    }
 
+	    
 	    $entries = 'INSERT INTO ' . $this->sql_backquote( $table ) . ' VALUES (';
 	    $search   = array( '\x00', '\x0a', '\x0d', '\x1a' );  
 	    $replace  = array( '\0', '\n', '\r', '\Z' );
@@ -395,7 +388,7 @@ class backup_restore {
 
 	    		} elseif ( $row[$j] === '0' || $row[$j] !== '' ) {
 
-	    		
+	    		 
 	    		    if ( $field_num[$j] )
 	    		    	$values[] = $row[$j];
 
@@ -411,6 +404,7 @@ class backup_restore {
 
 	    	$sql_file .= " \n" . $entries . implode( ', ', $values ) . ") ;";
 
+	    	
 	    	if ( $batch_write === 100 ) {
 	    		$batch_write = 0;
 	    		$this->write_sql( $sql_file );
@@ -425,7 +419,7 @@ class backup_restore {
 
 	    mysql_free_result( $result );
 
-	    
+	  
 	    $sql_file .= "\n";
 	    $sql_file .= "#\n";
 	    $sql_file .= "# End of data contents of table " . $table . "\n";
@@ -532,7 +526,7 @@ class backup_restore {
 
 	if (seems_utf8($string)) {
 		$chars = array(
-	
+		// Decompositions for Latin-1 Supplement
 		chr(194).chr(170) => 'a', chr(194).chr(186) => 'o',
 		chr(195).chr(128) => 'A', chr(195).chr(129) => 'A',
 		chr(195).chr(130) => 'A', chr(195).chr(131) => 'A',
@@ -709,7 +703,7 @@ class backup_restore {
 
 		$string = strtr($string, $chars);
 	} else {
-		
+		// Assume ISO-8859-1 if not UTF-8
 		$chars['in'] = chr(128).chr(131).chr(138).chr(142).chr(154).chr(158)
 			.chr(159).chr(162).chr(165).chr(181).chr(192).chr(193).chr(194)
 			.chr(195).chr(196).chr(197).chr(199).chr(200).chr(201).chr(202)

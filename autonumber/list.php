@@ -7,7 +7,6 @@
        	 <div class="col-lg-12">
             <h1 class="page-header">List of Autonumber  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h1>
        		</div>
-        	
    		 </div>
 	 		    <form action="controller.php?action=delete" Method="POST">  	
 			     <div class="table-responsive">					
@@ -17,7 +16,6 @@
 				  	<tr>
 				  		<th>No.</th>
 				  		<th>
-				  		
 				  		 Autonumber</th> 
 				  		  <th>Key</th>
 				  		 <th width="10%" align="center">Action</th>
@@ -35,6 +33,7 @@
 			  			echo '<td>' . $result->AUTOKEY.'</td>';
 				  		echo '<td align="center"><a title="Edit" href="index.php?view=edit&id='.$result->AUTOKEY.'" class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></a>
 				  		     <a title="Delete" href="controller.php?action=delete&id='.$result->AUTOKEY.'" class="btn btn-danger btn-xs  ">  <span class="fa  fa-trash-o fw-fa "></a></td>';
+				  		
 				  		echo '</tr>';
 				  	} 
 				  	?>
@@ -42,10 +41,9 @@
 					
 				</table>
 						<div class="btn-group">
-				
+			
 					<?php
 					if($_SESSION['U_ROLE']=='Administrator'){
-				
 					; }?>
 				</div>
 			

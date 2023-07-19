@@ -9,7 +9,6 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">List of Courses</h2>
-            
             </div>
                
             <div class="row">
@@ -26,12 +25,12 @@
 										  		<th width="10%" >Action</th>
 										 
 										  	</tr>	
-										  </thead>    
+										  </thead>   
 						              
 										  <tbody>
 										  	<?php 
 
-										  		
+										  	
 										  		$mydb->setQuery("SELECT CourseID,`CourseCode`, c.`Description`,`Department`
 																	FROM  `tblcourse` c, `tbldepartment` d WHERE c.DepartmentID=d.DepartmentID");
 										  		$cur = $mydb->loadResultList();
@@ -56,7 +55,6 @@
 						 
 										<div class="btn-group">
 										  <a href="index.php?view=add" class="btn btn-primary"><i class="fa fa-plus-circle fw-fa"></i> New</a>
-										
 										</div>
 						 
 										</form>

@@ -10,7 +10,6 @@
         <div class="container">
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Add New Course</h2>
-               
             </div>
                
             <div class="row">
@@ -78,7 +77,6 @@
 
                               <div class="col-md-8">
                                <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                      
                                </div>
                             </div>
                           </div>

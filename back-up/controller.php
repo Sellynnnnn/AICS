@@ -31,18 +31,18 @@ switch ($action) {
 		 $newImport = new backup_restore($db_host,$db_name,$db_user,$db_pass);
     
 	    $fileName = $db_name . "_" . date("Y-m-d_H-i-s") . ".sql";    
-	 
+	  
 	    header("Content-disposition: attachment; filename=".$fileName);
 	    header("Content-Type: application/force-download");
-	    
+	 
 	    header("Pragma: no-cache");
-	    header("Cache-Cont//header("Content-Transfer-Encoding: application/zip;\n");rol: must-revalidate, post-check=0, pre-check=0, public");
+	    header("Cache-Control: must-revalidate, post-check=0, pre-check=0, public");
 	    header("Expires: 0");
 
-	  
+	    
 	    echo $newImport -> backup(); die();
 
-	
+		
 	}
 
 	function doRestore(){
