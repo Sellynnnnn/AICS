@@ -16,10 +16,8 @@
 <section id="feature" class="transparent-bg">
         <div class="container">
            <div class="center wow fadeInDown">
-                 <h3 class="page-header">AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling System
-
-</h3>
-                
+                 <h3 class="page-header">SSG Event Tallying System</h3>
+           
             </div>
                
             <div class="row">
@@ -28,8 +26,8 @@
 
                               <div class="panel" id="imgview">            
                                 <div id="img_profile" class="panel-body">
-                             
-                                    <img title="profile image" id="imgprofile" class="img-hover"    src="<?php //echo web_root. 'admin/student/'.  $res->StudPhoto; ?>">
+                            
+                                    <img title="profile image" id="imgprofile" class="img-hover"    src="<?php ?>">
                                 
                                  </div>
                               <ul class="list-group">
@@ -45,7 +43,7 @@
                             </div>
                         </div>
                              
-                           
+                        
                       <div class="col-sm-6 wow fadeInDown"> 
                
 
@@ -85,7 +83,7 @@
                                   setTimeout("show2()",1000)
                                   }
                                   window.onload=show2
-                                 
+                                
                                   
                           </script> 
                           <?php

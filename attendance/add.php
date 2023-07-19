@@ -4,6 +4,7 @@
                          }
 
                     
+
                        ?> 
 
  <section id="feature" class="transparent-bg">
@@ -11,7 +12,6 @@
            <div class="center wow fadeInDown">
                  <h2 class="page-header">Add New Candidate</h2>
               
-            </div>
 
             <div class="row">
                 <div class="features">
@@ -98,7 +98,7 @@
 
                                 <div class="col-md-8">
                                  <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                                   
+                                  
                                  </div>
                               </div>
                             </div> 

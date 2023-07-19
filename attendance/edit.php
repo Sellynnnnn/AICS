@@ -15,7 +15,7 @@
    switch ($can_result->Position) {
 
      case 'President':
-    
+   
         $position ='<select class="form-control input-sm" name="Position" id="Position">
                       <option>Select</option>
                       <option SELECTED value="President">President</option>
@@ -26,7 +26,7 @@
                     </select> ';
        break;
      case 'Vice-President':
-  
+      
         $position ='<select class="form-control input-sm" name="Position" id="Position">
                       <option>Select</option>
                       <option  value="President">President</option>
@@ -38,7 +38,7 @@
 
        break;
      case 'Secretary':
-      
+     
        $position ='<select class="form-control input-sm" name="Position" id="Position">
                       <option>Select</option>
                       <option  value="President">President</option>
@@ -49,7 +49,7 @@
                     </select> ';
        break;
      case 'Treasurer':
-     
+       
         $position ='<select class="form-control input-sm" name="Position" id="Position">
                       <option>Select</option>
                       <option  value="President">President</option>
@@ -60,7 +60,6 @@
                     </select> ';
        break;
      case 'Senators':
-   
          $position ='<select class="form-control input-sm" name="Position" id="Position">
                       <option>Select</option>
                       <option  value="President">President</option>
@@ -89,7 +88,7 @@
     <div class="container">
        <div class="center wow fadeInDown">
              <h2 class="page-header">Update Candidate</h2>
-         
+          
         </div>
 
         <div class="row">
@@ -112,11 +111,10 @@
                                 ?>
                                 </label>
 
-                                
                                       <?php  
-                                        
+                                       
                                         ?>
-                                
+                                 
                                    
                                 </div>
                               </div>
@@ -171,7 +169,7 @@
 
                                 <div class="col-md-8">
                                  <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
-                                  
+                                   
                                  </div>
                               </div>
                             </div> 
@@ -180,7 +178,7 @@
             
             </div>
         </div>
-    </div><
+    </div>
 </section>
  
 

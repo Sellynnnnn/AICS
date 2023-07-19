@@ -2,7 +2,7 @@
  require_once ("../include/initialize.php");
 
  $studenID   = $_POST['IDNO'];
- 
+
 
  
 if (isset($_POST['checkattendance'])) {
@@ -17,12 +17,12 @@ if (isset($_POST['checkattendance'])) {
 
  
     if ($resDate=='AM') {
-    	
+
 
     	$validate_verifytimeintimeout_table = validate_verifytimeintimeout($studenID);
 
     	if ($validate_verifytimeintimeout_table==true) {
-    	
+    		
 
     		 $verifytimeintimeout = new VerifyTimeinTimeout();
     		 $row_verify  = $verifytimeintimeout->single_verifytimeintimeout($studenID);
@@ -30,7 +30,7 @@ if (isset($_POST['checkattendance'])) {
 
     		 $vefication = $row_verify->Verification; 
 
-    		
+    	
 				switch ($vefication) {
 		   			case 'TimeIn': 
 		   			
@@ -38,7 +38,8 @@ if (isset($_POST['checkattendance'])) {
 
 		   			       $r = validate_timetable($studenID,Date('Y-m-d')); 
 						   if ($r == true) {
-						   
+						
+						  
 						   		TIMETABLEUPDATE_TIMEOUT_AM($studenID,$insertTime);
 
 						   }else{
@@ -54,7 +55,7 @@ if (isset($_POST['checkattendance'])) {
 
 		   				   $r = validate_timetable($studenID,Date('Y-m-d')); 
 						   if ($r == true) {
-						   
+						  
 						   		TIMETABLE_TIMEIN_AM_INSERT($studenID,$insertTime);
 
 						   }else{
@@ -94,33 +95,32 @@ if (isset($_POST['checkattendance'])) {
 
 				switch ($vefication) {
 		   			case 'TimeIn': 
-		   				
+		   			
 
 		   			       TIMEOUT_VERIFY_UPDATE($studenID,$insertTime);
 
 		   			       $r = validate_timetable($studenID,Date('Y-m-d')); 
 						   if ($r == true) {
-						   
 						   		TIMETABLEUPDATE_TIMEOUT_PM($studenID,$insertTime);
 
 						   }else{
-						   
+						  
 								TIMETABLE_TIMEIN_PM_INSERT($studenID,$insertTime);
 						   } 
 		   				break;
 		   			case 'TimeOut': 
 
  					    
-		   			
+		   				
 		   				  TIMEIN_VERIFY_UPDATE($studenID,$insertTime);
 
 		   				   $r = validate_timetable($studenID,Date('Y-m-d')); 
 						   if ($r == true) {
-						   	
+						
 						   		TIMETABLEUPDATE_TIMEIN_PM($studenID,$insertTime);
 
 						   }else{
-						   
+						   	
 								TIMETABLE_TIMEIN_PM_INSERT($studenID,$insertTime);
 						   }
 
@@ -144,7 +144,7 @@ if (isset($_POST['checkattendance'])) {
  }
 
 if (isset($_POST['name'])) {
- 	
+ 	# code...
  	$sql = "SELECT * FROM `tblstudent`  s, `tblcourse` c WHERE s.`CourseID`=c.`CourseID` AND StudentID='".$studenID."'";
  	$mydb->setQuery($sql);
     @$cur = $mydb->loadSingleResult();
@@ -153,7 +153,7 @@ if (isset($_POST['name'])) {
  }
 
   if (isset($_POST['course'])) {
- 	
+ 	# code...
  	$sql = "SELECT * FROM `tblstudent`  s, `tblcourse` c WHERE s.`CourseID`=c.`CourseID` AND StudentID='".$studenID."'";
  	$mydb->setQuery($sql);
     @$cur = $mydb->loadSingleResult();
@@ -162,7 +162,7 @@ if (isset($_POST['name'])) {
  }
 
  if (isset($_POST['year'])) {
- 
+ 	# code...
  	$sql = "SELECT * FROM `tblstudent`  s, `tblcourse` c WHERE s.`CourseID`=c.`CourseID` AND StudentID='".$studenID."'";
  	$mydb->setQuery($sql);
     @$cur = $mydb->loadSingleResult();
@@ -171,7 +171,7 @@ if (isset($_POST['name'])) {
  }
 
   if (isset($_POST['img'])) {
- 
+ 	# code...
  	$sql = "SELECT * FROM `tblstudent`  s, `tblcourse` c WHERE s.`CourseID`=c.`CourseID` AND StudentID='".$studenID."'";
  	$mydb->setQuery($sql);
     @$cur = $mydb->loadSingleResult();
@@ -180,6 +180,7 @@ if (isset($_POST['name'])) {
  }
 
 
+ 
 
  function TIMEIN_VERIFY_INSERT($id,$time){
  	 if (student_notexist($id)) return;
@@ -296,7 +297,7 @@ global $mydb;
  	 $maxrow = $mydb->num_rows($result);
 
  	 if ($maxrow > 0) {
- 	
+ 	 	# code...
  	 	$time_table_validate = $mydb->loadSingleResult();
  	 	return true;
  	 }else{
@@ -311,7 +312,7 @@ global $mydb;
 	$result = $mydb->executeQuery();  
  	 $maxrow = $mydb->num_rows($result);
  	 if ($maxrow > 0) {
- 	 	
+ 	 	# code...
  		$rowverifytimeintimeout = $mydb->loadSingleResult();
  	 	return true;
  	 }else{

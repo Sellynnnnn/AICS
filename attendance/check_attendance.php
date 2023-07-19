@@ -9,7 +9,7 @@ require_once("../include/initialize.php");
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home |  AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling System</title>  
-    <!-- core CSS -->
+   
     <link href="<?php echo web_root; ?>css/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo web_root; ?>css/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo web_root; ?>css/css/animate.min.css" rel="stylesheet">
@@ -20,9 +20,9 @@ require_once("../include/initialize.php");
     <link href="<?php echo web_root; ?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 <link href="<?php echo web_root; ?>css/dataTables.bootstrap.css" rel="stylesheet">
-<!-- // <script src="<?php echo web_root; ?>select2/select2.min.css"></script> ./ -->
+<?php echo web_root; ?>
 
-<!-- datetime picker CSS -->
+
 <link href="<?php echo web_root; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <link href="<?php echo web_root; ?>css/datepicker.css" rel="stylesheet" media="screen">
 
@@ -31,10 +31,6 @@ require_once("../include/initialize.php");
 
 <link href="<?php echo web_root; ?>css/nav-button-custom.css" rel="stylesheet" media="screen">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -47,8 +43,8 @@ require_once("../include/initialize.php");
     {
      background:url(../images/attendancebg.jpg)  ;
     background-repeat: no-repeat;
-    height: 700px; /* You must set a specified height */
-    background-position: center; /* Center the image */
+    height: 700px;
+    background-position: center; 
     background-size:   cover;
     } 
   #imgview {
@@ -67,7 +63,7 @@ require_once("../include/initialize.php");
 
   </style>
   <div class="row">
-                 <h1 align="center"  > AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling </h1>
+                 <h1 align="center"  > AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling System </h1>
               </div>
 <section id="feature" class="transparent-bg">
         <div class="container"> 
@@ -81,16 +77,16 @@ require_once("../include/initialize.php");
 
                               <div class="panel" id="imgview">            
                                 <div id="img_profile" class="panel-body">
+                             
+                                    <img title="profile image" id="imgprofile" class="img-hover"    src="<?php ?>">
                                 
-                                    <img title="profile image" id="imgprofile" class="img-hover"    src="<?php //echo web_root. 'admin/student/'.  $res->StudPhoto; ?>">
-                               
                                  </div>
                            
                                     
                             </div>
                         </div>
                              
-                         
+                            
                       <div class="col-sm-7 wow fadeInDown"> 
                
 
@@ -119,13 +115,14 @@ require_once("../include/initialize.php");
             </div>
         </div>
     </section>
+ 
 <h2 style="color:#fff;text-align: center;"><span id="tick2" class="pull-rigth" >
       </span>&nbsp;|   <?php echo $datenow; ?>
 <h2>
  </body>
  <center>
    <footer>        
-    <p  style="color:#fff;font-size: 12px"> AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling System </p>  
+    <p  style="color:#fff;font-size: 12px">AICS BATANGAS: Computer Laboratory Attendance Monitoring and Profiling System</p>  
     </footer>
 </center>
  <script src="<?php echo web_root; ?>jquery/jquery.min.js"></script> 
